@@ -4,130 +4,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marwar Infotech | Luxury Interior Design Studio</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://tailwindcss.com"></script>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('https://unsplash.com');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), url('https://unsplash.com');
+        }
+        .portfolio-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
     </style>
 </head>
-<body class="bg-stone-50 text-stone-800 font-sans antialiased">
+<body class="bg-neutral-50 text-neutral-800 font-sans antialiased">
 
-    <!-- Navigation Header -->
-    <header class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-stone-200">
+    <!-- NAVIGATION HEADER -->
+    <header class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-neutral-200">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-widest text-stone-900">MARWAR <span class="text-amber-700">INFOTECH</span></div>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-wider">
-                <a href="#home" class="text-amber-700 transition">Home</a>
+            <div class="text-xl font-bold tracking-widest text-neutral-900">
+                MARWAR <span class="text-amber-700 font-light">INFOTECH</span>
+            </div>
+            
+            <!-- Desktop Links -->
+            <nav class="hidden md:flex space-x-8 text-xs font-semibold uppercase tracking-wider">
+                <a href="#home" class="hover:text-amber-700 transition">Home</a>
                 <a href="#about" class="hover:text-amber-700 transition">About</a>
                 <a href="#services" class="hover:text-amber-700 transition">Services</a>
                 <a href="#portfolio" class="hover:text-amber-700 transition">Portfolio</a>
                 <a href="#contact" class="hover:text-amber-700 transition">Contact</a>
             </nav>
-            <a href="#contact" class="hidden md:inline-block bg-stone-900 text-white text-xs font-semibold uppercase tracking-wider px-6 py-3 hover:bg-amber-700 transition">Book Consultation</a>
+            
+            <a href="#contact" class="hidden md:inline-block bg-neutral-900 text-white text-xs font-medium uppercase tracking-widest px-6 py-3 hover:bg-amber-700 transition duration-300">
+                Book Consultation
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-neutral-900 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-neutral-200 px-6 py-4 space-y-3">
+            <a href="#home" class="block text-sm uppercase tracking-wider font-medium text-neutral-600 hover:text-amber-700">Home</a>
+            <a href="#about" class="block text-sm uppercase tracking-wider font-medium text-neutral-600 hover:text-amber-700">About</a>
+            <a href="#services" class="block text-sm uppercase tracking-wider font-medium text-neutral-600 hover:text-amber-700">Services</a>
+            <a href="#portfolio" class="block text-sm uppercase tracking-wider font-medium text-neutral-600 hover:text-amber-700">Portfolio</a>
+            <a href="#contact" class="block text-sm uppercase tracking-wider font-medium text-neutral-600 hover:text-amber-700">Contact</a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-bg bg-cover bg-center h-screen flex items-center justify-center text-center px-4">
-        <div class="max-w-3xl">
-            <span class="text-amber-400 text-sm font-semibold uppercase tracking-widest block mb-4">Interiors & Space Planning</span>
-            <h1 class="text-4xl md:text-6xl font-light text-white tracking-wide mb-6 leading-tight">Crafting Spaces That Tell Your Story</h1>
-            <p class="text-stone-200 text-lg md:text-xl font-light mb-8 max-w-2xl mx-auto">Blending modern minimalism with structural elegance across residential and commercial landscapes.</p>
-            <div class="space-x-4">
-                <a href="#portfolio" class="bg-amber-700 text-white px-8 py-3.5 text-sm uppercase tracking-wider font-medium hover:bg-amber-800 transition">View Gallery</a>
-                <a href="#contact" class="border border-white text-white px-8 py-3.5 text-sm uppercase tracking-wider font-medium hover:bg-white hover:text-stone-900 transition">Get In Touch</a>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-bg bg-cover bg-center h-screen flex items-center px-6">
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2">
+            <div class="max-w-xl text-left">
+                <span class="text-amber-400 text-xs font-bold uppercase tracking-widest block mb-4">Luxury Interior Architecture</span>
+                <h1 class="text-4xl md:text-6xl font-extralight text-white tracking-wide mb-6 leading-tight">
+                    Spaces Styled for <span class="font-normal text-amber-500">Modern Living</span>.
+                </h1>
+                <p class="text-neutral-200 text-base md:text-lg font-light mb-8 leading-relaxed">
+                    We bridge structural optimization with high-end luxury, delivering spatial configurations tailored to residential comfort and professional commercial efficiency.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#portfolio" class="bg-amber-700 text-white px-8 py-4 text-xs uppercase tracking-widest font-semibold hover:bg-amber-800 transition duration-300">
+                        Explore Gallery
+                    </a>
+                    <a href="#contact" class="border border-white text-white px-8 py-4 text-xs uppercase tracking-widest font-semibold hover:bg-white hover:text-neutral-900 transition duration-300">
+                        Get In Touch
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-        <div>
-            <span class="text-amber-700 text-xs font-bold uppercase tracking-widest block mb-2">Our Philosophy</span>
-            <h2 class="text-3xl md:text-4xl font-light text-stone-900 mb-6">Heritage Meets Modern Functionality</h2>
-            <p class="text-stone-600 leading-relaxed mb-6">At Marwar Infotech, we conceptualize and build structural spaces engineered for comfort, luxury, and durability. Inspired by timeless architecture and driven by contemporary design frameworks, our layouts maximize spatial efficiency without compromising aesthetic value.</p>
-            <p class="text-stone-600 leading-relaxed">Whether it is a premium residential villa or a high-traffic corporate office, our team delivers turnkey interior execution built to international standards.</p>
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-28 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <div class="lg:col-span-5">
+            <span class="text-amber-700 text-xs font-bold uppercase tracking-widest block mb-3">Our Core Philosophy</span>
+            <h2 class="text-3xl md:text-4xl font-light text-neutral-900 mb-6 tracking-wide">Crafting Timeless Environments</h2>
+            <p class="text-neutral-600 text-sm leading-relaxed mb-6">
+                At Marwar Infotech, we orchestrate space layout blueprints engineered for aesthetic longevity, operational comfort, and premium spatial efficiency.
+            </p>
+            <p class="text-neutral-600 text-sm leading-relaxed mb-8">
+                From luxury domestic villa transformations to minimalist architectural offices, our design pipeline addresses end-to-end site configuration, lighting strategies, and custom material selection.
+            </p>
+            <div class="grid grid-cols-3 gap-4 border-t border-neutral-200 pt-8 text-center">
+                <div>
+                    <h3 class="text-2xl font-light text-neutral-900">120+</h3>
+                    <p class="text-neutral-500 text-[10px] uppercase font-bold tracking-wider mt-1">Projects Done</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-light text-neutral-900">15+</h3>
+                    <p class="text-neutral-500 text-[10px] uppercase font-bold tracking-wider mt-1">Design Awards</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-light text-neutral-900">100%</h3>
+                    <p class="text-neutral-500 text-[10px] uppercase font-bold tracking-wider mt-1">Turnkey Delivery</p>
+                </div>
+            </div>
         </div>
-        <div class="grid grid-cols-2 gap-4">
-            <img src="https://unsplash.com" alt="Living Architecture" class="w-full h-72 object-cover rounded shadow-sm">
-            <img src="https://unsplash.com" alt="Minimalist Office" class="w-full h-72 object-cover rounded shadow-sm mt-8">
+        <div class="lg:col-span-7 grid grid-cols-2 gap-4">
+            <img src="https://unsplash.com" alt="Living Architecture" class="w-full h-80 object-cover rounded shadow-md">
+            <img src="https://unsplash.com" alt="Minimalist Kitchen" class="w-full h-80 object-cover rounded shadow-md mt-12">
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="bg-stone-900 text-white py-24">
+    <!-- SERVICES SECTION -->
+    <section id="services" class="bg-neutral-950 text-white py-28">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-xl mx-auto mb-16">
-                <span class="text-amber-500 text-xs font-bold uppercase tracking-widest block mb-2">Expertise</span>
-                <h2 class="text-3xl md:text-4xl font-light mb-4">Our Specialized Design Services</h2>
-                <div class="h-0.5 w-16 bg-amber-500 mx-auto"></div>
+            <div class="max-w-xl mb-20">
+                <span class="text-amber-500 text-xs font-bold uppercase tracking-widest block mb-3">Capabilities</span>
+                <h2 class="text-3xl md:text-4xl font-light mb-4 tracking-wide">Professional Spatial Solutions</h2>
+                <div class="h-0.5 w-16 bg-amber-500"></div>
             </div>
+            
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="border border-stone-800 p-8 hover:border-amber-500 transition duration-300">
-                    <h3 class="text-xl font-medium mb-4 text-stone-100">Residential Architecture</h3>
-                    <p class="text-stone-400 text-sm leading-relaxed">End-to-end bespoke visual conceptualization for luxury apartments, private custom villas, and modern estate renovations.</p>
+                <!-- Service Item 1 -->
+                <div class="border border-neutral-800 p-8 hover:border-amber-500 transition duration-300 group">
+                    <div class="text-amber-500 text-2xl font-light mb-6">01</div>
+                    <h3 class="text-xl font-medium mb-4 text-neutral-100 group-hover:text-amber-500 transition">Residential Luxury</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed">Bespoke structural layout configurations designed exclusively for private villas, contemporary penthouses, and custom estate upgrades.</p>
                 </div>
-                <!-- Service 2 -->
-                <div class="border border-stone-800 p-8 hover:border-amber-500 transition duration-300">
-                    <h3 class="text-xl font-medium mb-4 text-stone-100">Corporate & Retail</h3>
-                    <p class="text-stone-400 text-sm leading-relaxed">Ergonomic office structures, high-conversion retail floor dynamics, and commercial setups optimized for efficiency.</p>
+                <!-- Service Item 2 -->
+                <div class="border border-neutral-800 p-8 hover:border-amber-500 transition duration-300 group">
+                    <div class="text-amber-500 text-2xl font-light mb-6">02</div>
+                    <h3 class="text-xl font-medium mb-4 text-neutral-100 group-hover:text-amber-500 transition">Corporate & Commercial</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed">Ergonomic structural architecture optimizing high-density workspaces, conference frameworks, and premium retail environments.</p>
                 </div>
-                <!-- Service 3 -->
-                <div class="border border-stone-800 p-8 hover:border-amber-500 transition duration-300">
-                    <h3 class="text-xl font-medium mb-4 text-stone-100">Turnkey Execution</h3>
-                    <p class="text-stone-400 text-sm leading-relaxed">Complete construction, strict vendor provisioning, and meticulous on-site implementation management from blueprint to handover.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Grid -->
-    <section id="portfolio" class="py-24 max-w-7xl mx-auto px-6">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
-            <div>
-                <span class="text-amber-700 text-xs font-bold uppercase tracking-widest block mb-2">Our Work</span>
-                <h2 class="text-3xl md:text-4xl font-light text-stone-900">Featured Transformations</h2>
-            </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="group relative overflow-hidden h-96">
-                <img src="https://unsplash.com" alt="The Grand Lounge" class="w-full h-full object-cover transformation group-hover:scale-105 transition duration-500">
-                <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent flex items-end p-6">
-                    <div>
-                        <h4 class="text-white text-lg font-medium">The Grand Lounge</h4>
-                        <p class="text-amber-400 text-xs uppercase tracking-wider">Residential Portfolio</p>
-                    </div>
-                </div>
-            </div>
-            <div class="group relative overflow-hidden h-96">
-                <img src="https://unsplash.com" alt="HQ Workspace" class="w-full h-full object-cover transformation group-hover:scale-105 transition duration-500">
-                <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent flex items-end p-6">
-                    <div>
-                        <h4 class="text-white text-lg font-medium">HQ Workspace</h4>
-                        <p class="text-amber-400 text-xs uppercase tracking-wider">Commercial Space</p>
-                    </div>
-                </div>
-            </div>
-            <div class="group relative overflow-hidden h-96">
-                <img src="https://unsplash.com" alt="Minimalist Culinary Suite" class="w-full h-full object-cover transformation group-hover:scale-105 transition duration-500">
-                <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent flex items-end p-6">
-                    <div>
-                        <h4 class="text-white text-lg font-medium">Minimalist Kitchen</h4>
-                        <p class="text-amber-400 text-xs uppercase tracking-wider">Modular Fittings</p>
-                    </div>
+                <!-- Service Item 3 -->
+                <div class="border border-neutral-800 p-8 hover:border-amber-500 transition duration-300 group">
+                    <div class="text-amber-500 text-2xl font-light mb-6">03</div>
+                    <h3 class="text-xl font-medium mb-4 text-neutral-100 group-hover:text-amber-500 transition">Bespoke Turnkey Delivery</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed">Rigorous material vendor procurement, precise architectural documentation management, and thorough onsite construction oversight.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact & Consultation Form -->
-    <section id="contact" class="bg-stone-100 py-24 border-t border-stone-200">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16">
+    <!-- PORTFOLIO SECTION WITH JAVASCRIPT FILTERING -->
+    <section id="portfolio" class="py-28 max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
             <div>
-                <span class="text-amber-700 text-xs font-bold uppercase tracking-widest block mb-2">Connect</span>
-                <h2 class="text-3xl md:text-4xl font-light text-stone-900 mb-6">Let's Discuss Your Project</h2>
-                <p class="text-stone-600 mb-8">Ready to elevate your everyday living or working environment? Drop us a message, and our architectural design consultants will reach out to outline a layout strategy.</p>
-                <div class="space-y-4 text-sm font-medium text-stone-800">
-                    <p><strong class="text-stone-500 block uppercase text-xs tracking-wider">Studio Office</strong> Marwar Region, Rajasthan, India</p>
+                <span class="text-amber-700 text-xs font-bold uppercase tracking-widest block mb-3">Our Work</span>
